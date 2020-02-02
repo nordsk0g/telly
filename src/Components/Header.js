@@ -7,38 +7,40 @@ import headerStyles from "./Header.module.scss";
 function Header(props) {
   return (
     <header>
-      <nav>
-        <ul className={headerStyles["nav-bar"]}>
+      <nav className={headerStyles["nav-bar"]}>
+        <ul className={headerStyles["menu"]}>
           <Link
             to="/"
-            className={`${headerStyles["nav-item"]} ${headerStyles.home}`}
+            className={`${headerStyles["menu-item"]} ${headerStyles.home}`}
           >
             <li>Telly</li>
           </Link>
-          <Link
-            to="/activity"
-            className={`${headerStyles["nav-item"]} ${headerStyles.activity}`}
-          >
-            <li>Activity</li>
-          </Link>
-          <Link
-            to="/shows"
-            className={`${headerStyles["nav-item"]} ${headerStyles.shows}`}
-          >
-            <li>Shows</li>
-          </Link>
-          <Link
-            to="/lists"
-            className={`${headerStyles["nav-item"]} ${headerStyles.lists}`}
-          >
-            <li>Lists</li>
-          </Link>
-          <Link
-            to="/people"
-            className={`${headerStyles["nav-item"]} ${headerStyles.people}`}
-          >
-            <li>People</li>
-          </Link>
+          <div className={headerStyles["item-container"]}>
+            <Link
+              to="/activity"
+              className={`${headerStyles["menu-item"]} ${headerStyles.activity}`}
+            >
+              <li>Activity</li>
+            </Link>
+            <Link
+              to="/shows"
+              className={`${headerStyles["menu-item"]} ${headerStyles.shows}`}
+            >
+              <li>Shows</li>
+            </Link>
+            <Link
+              to="/lists"
+              className={`${headerStyles["menu-item"]} ${headerStyles.lists}`}
+            >
+              <li>Lists</li>
+            </Link>
+            <Link
+              to="/people"
+              className={`${headerStyles["menu-item"]} ${headerStyles.people}`}
+            >
+              <li>People</li>
+            </Link>
+          </div>
         </ul>
       </nav>
     </header>
