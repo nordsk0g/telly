@@ -1,0 +1,18 @@
+.modal {
+  width: 90%;
+  height: 60%;
+  padding: 2rem;
+  background: #1c222e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 5px;
+  position: fixed;
+  top: 20vh;
+  left: 5%;
+}
+
+@media (min-width: 768px) {
+  .modal {
+    width: 30rem;
+    left: calc((100% - 30rem) / 2);
+  }
+}

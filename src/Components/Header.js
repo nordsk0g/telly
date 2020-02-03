@@ -25,12 +25,29 @@ function Header(props) {
           </NavLink>
           <div className={headerStyles["item-container"]}>
             <NavLink
+              to="/sign-in"
+              onClick={props.visibleEventHandler}
+              className={headerStyles["menu-item"]}
+              activeStyle={{ color: "#f5f5f5" }}
+              value={"sign-up"}
+            >
+              <li>Sign In</li>
+            </NavLink>
+            <NavLink
+              to="/register"
+              onClick={props.visibleEventHandler}
+              className={headerStyles["menu-item"]}
+              activeStyle={{ color: "#f5f5f5" }}
+            >
+              <li>register</li>
+            </NavLink>
+            {/* <NavLink
               to="/activity"
               className={headerStyles["menu-item"]}
               activeStyle={{ color: "#f5f5f5" }}
             >
               <li>Activity</li>
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/shows"
               className={headerStyles["menu-item"]}
@@ -62,7 +79,9 @@ function Header(props) {
                 onChange={e => setSearch(e.target.value)}
               />
               <button type="submit" className={headerStyles["search-btn"]}>
-                <i className={`bx bx-search`}></i>
+                <i
+                  className={`bx bx-search ${headerStyles["search-icon"]}`}
+                ></i>
               </button>
             </form>
           </div>
