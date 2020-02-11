@@ -1,0 +1,22 @@
+$active-color: #6d67ff;
+$secondary-color: #01cdfe;
+
+.nav-bar {
+  margin: 1rem auto;
+  width: 100%;
+  display: flex;
+  background-color: #323941;
+  border-radius: 5px;
+
+  .nav-item {
+    height: 100%;
+    padding: 1rem 0.75rem;
+    font-size: 0.8rem;
+    color: #fefefe;
+    text-decoration: none;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}

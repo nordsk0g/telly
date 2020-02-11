@@ -1,7 +1,9 @@
-$header-background: #12161e;
+$header-background: #0e0f10;
+// $header-background: #12161e;
 $lighter-header: #1c222e;
-$font-color: #c6c6c6;
-$active-color: #f5f5f5;
+$font-color: #fefefe;
+$active-color: #6d67ff;
+$accessory-color: #6d67ff;
 
 .nav-bar {
   height: 5rem;
@@ -11,7 +13,7 @@ $active-color: #f5f5f5;
 
 .menu {
   height: 100%;
-  width: 800px;
+  width: 50%;
   margin: 0 auto;
   display: flex;
   color: $font-color;
@@ -26,11 +28,12 @@ $active-color: #f5f5f5;
   }
 
   .menu-item {
-    margin: 0 1rem;
-    font-size: 0.9rem;
+    margin: 0 0.75rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
+    cursor: pointer;
 
     &:visited {
       color: inherit;
@@ -55,12 +58,12 @@ $active-color: #f5f5f5;
       border-radius: 5px;
 
       &:focus {
-        border: 1px solid #468499;
+        border: 1px solid $accessory-color;
       }
     }
     .search-btn {
-      background-color: #468499;
-      color: $active-color;
+      background-color: $accessory-color;
+      color: $font-color;
       font-size: 1.3rem;
       border: none;
       border-radius: 50%;

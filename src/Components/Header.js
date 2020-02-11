@@ -24,48 +24,57 @@ function Header(props) {
             <li>Telly</li>
           </NavLink>
           <div className={headerStyles["item-container"]}>
-            <NavLink
-              to="/sign-in"
-              onClick={props.visibleEventHandler}
+            <li
+              onClick={props.formEventHandler}
               className={headerStyles["menu-item"]}
-              activeStyle={{ color: "#f5f5f5" }}
-              value={"sign-up"}
             >
-              <li>Sign In</li>
-            </NavLink>
-            <NavLink
-              to="/register"
-              onClick={props.visibleEventHandler}
+              Login
+            </li>
+            <li
+              onClick={props.formEventHandler}
               className={headerStyles["menu-item"]}
-              activeStyle={{ color: "#f5f5f5" }}
             >
-              <li>register</li>
-            </NavLink>
+              Register
+            </li>
             {/* <NavLink
               to="/activity"
               className={headerStyles["menu-item"]}
-              activeStyle={{ color: "#f5f5f5" }}
+              activeStyle={{ color: "#6d67ff" }}
             >
               <li>Activity</li>
             </NavLink> */}
             <NavLink
+              to="/profile"
+              className={headerStyles["menu-item"]}
+              activeStyle={{ color: "#6d67ff" }}
+            >
+              <li>Profile</li>
+            </NavLink>
+            <NavLink
+              to="/reviews"
+              className={headerStyles["menu-item"]}
+              activeStyle={{ color: "#6d67ff" }}
+            >
+              <li>Reviews</li>
+            </NavLink>
+            <NavLink
               to="/shows"
               className={headerStyles["menu-item"]}
-              activeStyle={{ color: "#f5f5f5" }}
+              activeStyle={{ color: "#6d67ff" }}
             >
               <li>Shows</li>
             </NavLink>
             <NavLink
               to="/lists"
               className={headerStyles["menu-item"]}
-              activeStyle={{ color: "#f5f5f5" }}
+              activeStyle={{ color: "#6d67ff" }}
             >
               <li>Lists</li>
             </NavLink>
             <NavLink
               to="/people"
               className={headerStyles["menu-item"]}
-              activeStyle={{ color: "#f5f5f5" }}
+              activeStyle={{ color: "#6d67ff" }}
             >
               <li>People</li>
             </NavLink>

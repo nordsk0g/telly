@@ -12,5 +12,12 @@ body,
 html {
   font-family: "Montserrat", sans-serif;
   color: $light-color;
-  background-color: $dark-color;
+  background: rgb(34, 38, 42);
+  background: linear-gradient(
+    180deg,
+    rgba(34, 38, 42, 1) 10%,
+    rgba(14, 15, 16, 1) 40%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
