@@ -1,0 +1,27 @@
+$active-color: #6d67ff;
+
+.content {
+  width: 50%;
+  margin: auto;
+  //   overflow: hidden;
+}
+
+.trending-shows {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1rem;
+
+  .trending-show {
+    margin: 0 0.45rem;
+    height: 268px;
+    width: 180px;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      border: 3px solid $active-color;
+    }
+  }
+}

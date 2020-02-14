@@ -51,13 +51,6 @@ function Header(props) {
               <li>Profile</li>
             </NavLink>
             <NavLink
-              to="/reviews"
-              className={headerStyles["menu-item"]}
-              activeStyle={{ color: "#6d67ff" }}
-            >
-              <li>Reviews</li>
-            </NavLink>
-            <NavLink
               to="/shows"
               className={headerStyles["menu-item"]}
               activeStyle={{ color: "#6d67ff" }}

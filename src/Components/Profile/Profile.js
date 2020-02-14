@@ -1,8 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { forceUpdate } from "react";
+import { HashRouter as Router, Route } from "react-router-dom";
+import { LastLocationProvider } from "react-router-last-location";
 
 // Imported components
 import ProfileMenu from "./ProfileMenu";
+import Reviews from "../Reviews/Reviews";
 
 // Styles
 // Styles
@@ -13,6 +15,8 @@ function Profile() {
     <Router>
       <div className={profileStyles.content}>
         <ProfileMenu />
+
+        <Route exact path="/profile/reviews" render={() => <Reviews />} />
       </div>
     </Router>
   );

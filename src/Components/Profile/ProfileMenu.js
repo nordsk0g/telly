@@ -10,63 +10,63 @@ function ProfileMenu() {
       <NavLink
         to="/activty"
         className={profileMenuStyles["nav-item"]}
-        activeStyle={{ backgroundColor: "#6d67ff", color: "#fefefe" }}
+        activeStyle={{ backgroundColor: "#656e77", color: "#fefefe" }}
       >
         Activity
       </NavLink>
       <NavLink
         to="/shows"
         className={profileMenuStyles["nav-item"]}
-        activeStyle={{ backgroundColor: "#6d67ff", color: "#fefefe" }}
+        activeStyle={{ backgroundColor: "#656e77", color: "#fefefe" }}
       >
         Shows
       </NavLink>
       <NavLink
         to="/diary"
         className={profileMenuStyles["nav-item"]}
-        activeStyle={{ backgroundColor: "#6d67ff", color: "#fefefe" }}
+        activeStyle={{ backgroundColor: "#656e77", color: "#fefefe" }}
       >
         Diary
       </NavLink>
       <NavLink
-        to="/reviews"
+        to="/profile/reviews"
         className={profileMenuStyles["nav-item"]}
-        activeStyle={{ backgroundColor: "#6d67ff", color: "#fefefe" }}
+        activeStyle={{ backgroundColor: "#656e77", color: "#fefefe" }}
       >
         Reviews
       </NavLink>
       <NavLink
         to="/watchlist"
         className={profileMenuStyles["nav-item"]}
-        activeStyle={{ backgroundColor: "#6d67ff", color: "#fefefe" }}
+        activeStyle={{ backgroundColor: "#656e77", color: "#fefefe" }}
       >
         Watchlist
       </NavLink>
       <NavLink
         to="/lists"
         className={profileMenuStyles["nav-item"]}
-        activeStyle={{ backgroundColor: "#6d67ff", color: "#fefefe" }}
+        activeStyle={{ backgroundColor: "#656e77", color: "#fefefe" }}
       >
         Lists
       </NavLink>
       <NavLink
         to="/likes"
         className={profileMenuStyles["nav-item"]}
-        activeStyle={{ backgroundColor: "#6d67ff", color: "#fefefe" }}
+        activeStyle={{ backgroundColor: "#656e77", color: "#fefefe" }}
       >
         Likes
       </NavLink>
       <NavLink
         to="/tags"
         className={profileMenuStyles["nav-item"]}
-        activeStyle={{ backgroundColor: "#6d67ff", color: "#fefefe" }}
+        activeStyle={{ backgroundColor: "#656e77", color: "#fefefe" }}
       >
         Tags
       </NavLink>
       <NavLink
         to="/network"
         className={profileMenuStyles["nav-item"]}
-        activeStyle={{ backgroundColor: "#6d67ff", color: "#fefefe" }}
+        activeStyle={{ backgroundColor: "#656e77", color: "#fefefe" }}
       >
         Network
       </NavLink>

@@ -1,10 +1,12 @@
-$active-color: #6d67ff;
+$active-color: #656e77;
 $secondary-color: #01cdfe;
 
 .nav-bar {
   margin: 1rem auto;
   width: 100%;
   display: flex;
+  align-items: center;
+  // justify-content: center;
   background-color: #323941;
   border-radius: 5px;
 
