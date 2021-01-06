@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { LastLocationProvider } from "react-router-last-location";
 
 // Components
@@ -9,9 +9,10 @@ import Modal from "./Components/Modal/Modal";
 import Backdrop from "./Components/Backdrop/Backdrop";
 import Reviews from "./Components/Reviews/Reviews";
 import Shows from "./Components/Shows/Shows";
-import Profile from "./Components/Profile/Profile";
+import Show from "./Components/Show/Show";
+import Activity from "./Components/Profile/Activity";
 
-function App() {
+function App(props) {
   const [visible, setVisible] = useState(false);
   const [formType, setFormType] = useState(false);
 
@@ -34,8 +35,12 @@ function App() {
         visibleEventHandler={visibleEventHandler}
       />
       <Header formEventHandler={formEventHandler} />
-      <Route exact path="/profile" render={() => <Profile />} />
-      <Route exact path="/shows" render={() => <Shows />} />
+      <Switch>
+        <Route path="/activity" component={Activity} />
+        <Route exact path="/shows" component={Shows} />
+        <Route exact path="/show/:show" component={Show} />
+        <Route exact path="/:profile/show/:show" component={Show} />
+      </Switch>
       {/* </LastLocationProvider> */}
     </Router>
   );

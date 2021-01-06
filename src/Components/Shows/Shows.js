@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // Components
 import SectionHeading from "../Utility Components/SectionHeading";
@@ -14,6 +15,7 @@ function Shows() {
 
   useEffect(() => {
     showsService.getAll().then(res => {
+      console.log(res.data);
       setTrending(res.data.trending);
     });
   }, []);
@@ -23,14 +25,18 @@ function Shows() {
       <SectionHeading title="Shows Trending Now" />
       <section className={showsStyles["trending-shows"]}>
         {trending.map((show, index) => (
-          <img
-            src={show.poster}
-            className={showsStyles["trending-show"]}
-            alt={`${show.title} poster`}
-          />
+          <Link
+            to={{ pathname: `/show/${show.slug}`, state: { id: show.id } }}
+            key={index}
+          >
+            <img
+              src={show.poster}
+              className={showsStyles["trending-show"]}
+              alt={`${show.title} poster`}
+            />
+          </Link>
         ))}
       </section>
-      <ul className={showsStyles["trending-shows"]}></ul>
     </div>
   );
 }

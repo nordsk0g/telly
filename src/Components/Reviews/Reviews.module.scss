@@ -1,16 +1,16 @@
 $primary-color: #6d67ff;
 $secondary-color: #a8a9a4;
+$active-color: #01cdfe;
 $title-color: #fefefe;
 $font-color: #e1dddc;
 
 .content {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  display: flex;
+  flex-direction: column;
+  width: 70%;
   color: $font-color;
 
   .reviews-list {
-    grid-column-start: 3;
-    grid-column-end: span 3;
     list-style: none;
     margin: 1rem 0 0 1rem;
     .review-item {
@@ -30,23 +30,46 @@ $font-color: #e1dddc;
         }
       }
 
-      .show-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: $title-color;
-      }
+      .details {
+        height: 150px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-      .date {
-        font-size: 0.7rem;
-        color: $secondary-color;
-        margin-bottom: 0.5rem;
-      }
+        a {
+          text-decoration: none;
+        }
 
-      .review-content {
-        font-size: 0.9rem;
-        font-weight: 500;
-        margin-bottom: 0.5rem;
+        .show-title {
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          color: $title-color;
+          &:hover {
+            color: $active-color;
+          }
+        }
+
+        .date {
+          font-size: 0.7rem;
+          color: $secondary-color;
+          margin-bottom: 0.5rem;
+        }
+
+        .review-content {
+          font-size: 0.9rem;
+          font-weight: 500;
+          margin-bottom: 0.5rem;
+        }
+
+        .likes {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-size: 0.85rem;
+          margin-bottom: 0.5rem;
+        }
       }
     }
   }

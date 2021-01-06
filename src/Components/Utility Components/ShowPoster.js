@@ -8,7 +8,7 @@ function ShowPoster(props) {
     <div>
       <img
         src={props.poster}
-        className={utilityStyles["show-object"]}
+        className={`${props.className} ${utilityStyles["show-poster"]}`}
         alt={props.title}
       />
     </div>

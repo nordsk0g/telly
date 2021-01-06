@@ -1,0 +1,47 @@
+.show {
+  width: 50%;
+  margin: auto;
+  padding-top: 2rem;
+
+  .container {
+    display: flex;
+    .poster {
+      height: 350px;
+    }
+    .details {
+      margin-left: 3rem;
+      .show-header {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+        .title {
+          margin-right: 0.75rem;
+          font-weight: 600;
+          font-size: 1.5rem;
+        }
+        a {
+          text-decoration: none;
+          color: #fefefe;
+          font-size: 1rem;
+        }
+
+        .header-info {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: baseline;
+          .creators {
+            display: flex;
+            flex-direction: row;
+            font-size: 1.2rem;
+            a {
+              font-size: 1.2rem;
+              margin-left: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

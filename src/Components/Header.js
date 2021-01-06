@@ -44,11 +44,11 @@ function Header(props) {
               <li>Activity</li>
             </NavLink> */}
             <NavLink
-              to="/profile"
+              to="/activity"
               className={headerStyles["menu-item"]}
               activeStyle={{ color: "#6d67ff" }}
             >
-              <li>Profile</li>
+              <li>activity</li>
             </NavLink>
             <NavLink
               to="/shows"
