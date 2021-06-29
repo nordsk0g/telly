@@ -10,13 +10,12 @@ import showsService from "../../services/shows";
 // Styling
 import showsStyles from "./Shows.module.scss";
 
-function Shows() {
+export default function Shows() {
   const [trending, setTrending] = useState([]);
 
   useEffect(() => {
     showsService.getAll().then(res => {
-      console.log(res.data);
-      setTrending(res.data.trending);
+      setTrending(res.data);
     });
   }, []);
 
@@ -26,7 +25,8 @@ function Shows() {
       <section className={showsStyles["trending-shows"]}>
         {trending.map((show, index) => (
           <Link
-            to={{ pathname: `/show/${show.slug}`, state: { id: show.id } }}
+            to={`/show/${show.id}`}
+            // to={{ pathname: `/show/${show.slug}`, state: { id: show.id } }}
             key={index}
           >
             <img
@@ -40,5 +40,3 @@ function Shows() {
     </div>
   );
 }
-
-export default Shows;

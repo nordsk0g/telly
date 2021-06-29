@@ -1,47 +1,190 @@
+$header-background: #0e0f10;
+$lighter-header: #22262a;
+$lightest: hsl(0, 0%, 100%);
+$lighter: hsl(0, 0%, 70%);
+$light: hsl(0, 0%, 60%);
+$darker: hsl(0, 0%, 50%);
+$darkest: hsl(0, 0%, 20%);
+$active-color: #6d67ff;
+$second-active-color: #67ff6d;
+$third-active-color: #ff6d67;
+
+* {
+  box-sizing: border-box;
+}
+
 .show {
   width: 50%;
   margin: auto;
-  padding-top: 2rem;
+  // padding-top: 2rem;
+
+  a {
+    text-decoration: none;
+    color: $lightest;
+    font-size: 1rem;
+  }
 
   .container {
+    margin-top: 2em;
     display: flex;
     .poster {
       height: 350px;
+      border: 0.11em solid $lighter;
+      border-radius: 0.5em;
     }
     .details {
-      margin-left: 3rem;
+      margin-left: 3em;
+      width: 50%;
       .show-header {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: baseline;
-        justify-content: space-between;
+        gap: 0.4em;
+        // justify-content: space-between;
         .title {
-          margin-right: 0.75rem;
+          margin-right: 0.75em;
           font-weight: 600;
-          font-size: 1.5rem;
-        }
-        a {
-          text-decoration: none;
-          color: #fefefe;
-          font-size: 1rem;
+          font-size: 2rem;
         }
 
         .header-info {
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
+          gap: 0.8em;
           align-items: baseline;
+          margin-bottom: 2em;
+
+          .year {
+            border-bottom: 0.1em dotted $lighter;
+            &:hover {
+              color: $second-active-color;
+            }
+          }
+
+          p {
+            color: $lighter;
+          };
           .creators {
             display: flex;
             flex-direction: row;
-            font-size: 1.2rem;
-            a {
-              font-size: 1.2rem;
-              margin-left: 0.5rem;
+            flex: 1;
+            flex-wrap: wrap;
+            // justify-content: space-between;
+            .creator:first-of-type {
+              margin-left: 0.5em;
+            }
+            .creator {
+              margin-right: 0.75em;
+              margin-bottom: 0.5em;
+              a {
+                
+                font-size: 1rem;
+                // margin-left: 0.5em;
+                border-bottom: 0.1em dotted $lighter;
+                &:hover {
+                  color: $second-active-color;
+                }
+              }
             }
           }
         }
-      }
+        
+    }
+    .description {
+      font-size: 0.9rem;
+      line-height: 1.5em;
+      color: $lighter;
+    }
+  }
+}
+
+// Meta information
+// Menu
+.metaInfoMenu {
+  margin-top: 2em;
+  padding-bottom: 0.5em;
+  display: flex;
+  gap: 1em;
+  list-style: none;
+  border-bottom: $darker 1px solid;
+
+  li {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 1.7em;
+      left: 0px;
+      width: 100%;
+      border-bottom: 1px solid transparent;
+    }
+    &:hover {
+      color: $second-active-color
+    }
+    &:hover::after {
+      border-bottom-color: $second-active-color;
+    }
+  }
+  
+  .menu-item-active {
+    position: relative;
+    color: $second-active-color;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 1.7em;
+      left: 0px;
+      width: 100%;
+      border-bottom: 1px solid $second-active-color;
+    }
+    
+  }
+}
+
+// Genres
+.genre {
+  margin-top: 1em;
+  width: 100%;
+  display: flex;
+
+  .genreItem {
+    padding: 0.25em 0.3em;
+    font-size: 0.8rem;
+    background-color: $lighter-header;
+    border: 0.1em solid transparent;
+    margin-right: 0.2em;
+
+    &:hover {
+      // border: 0.1em solid $active-color;
+      // background-color: $header-background;
+      color: $second-active-color;
+    }
+  }
+  
+}
+}
+.genre > * + * {
+margin-left: 0.5em;
+}
+
+// Cast
+.cast {
+  margin-top: 1em;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  
+  
+  .castItem {
+    margin-bottom: 0.25em;
+    margin-right: 0.5em;
+    padding: 0.25em 0.3em;
+    font-size: 0.8rem;
+    background-color: $lighter-header;
+    border: 0.1em solid transparent;
+  
+    &:hover {
+      color: $second-active-color
     }
   }
 }

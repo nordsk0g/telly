@@ -10,6 +10,7 @@ import Backdrop from "./Components/Backdrop/Backdrop";
 import Reviews from "./Components/Reviews/Reviews";
 import Shows from "./Components/Shows/Shows";
 import Show from "./Components/Show/Show";
+import Actor from "./Components/Actor/Actor";
 import Activity from "./Components/Profile/Activity";
 
 function App(props) {
@@ -35,12 +36,13 @@ function App(props) {
         visibleEventHandler={visibleEventHandler}
       />
       <Header formEventHandler={formEventHandler} />
-      <Switch>
+      {/* <Switch> */}
         <Route path="/activity" component={Activity} />
         <Route exact path="/shows" component={Shows} />
         <Route exact path="/show/:show" component={Show} />
+        <Route exact path="/actor/:actor" component={Actor} />
         <Route exact path="/:profile/show/:show" component={Show} />
-      </Switch>
+      {/* </Switch> */}
       {/* </LastLocationProvider> */}
     </Router>
   );

@@ -1,0 +1,74 @@
+$header-background: #0e0f10;
+$lighter-header: #22262a;
+$lightest: hsl(0, 0%, 100%);
+$lighter: hsl(0, 0%, 70%);
+$light: hsl(0, 0%, 60%);
+$darker: hsl(0, 0%, 50%);
+$darkest: hsl(0, 0%, 20%);
+$active-color: #6d67ff;
+$second-active-color: #67ff6d;
+$third-active-color: #ff6d67;
+
+* {
+  box-sizing: border-box;
+}
+
+// h1 {}
+h2 {
+  font-size: 0.8rem;
+  font-weight: 300;
+
+}
+
+.actor-section {
+  width: 50%;
+  margin: 2em auto auto auto;
+}
+
+.actor-header {
+  display: flex;
+  gap: 1em;
+  // flex-direction: row-reverse;
+  // justify-content: space-between;
+
+  .headshot {
+      height: 100px;
+      border: 0.11em solid $lighter;
+      border-radius: 0.5em;
+  }
+
+  h2:first-of-type {
+    margin-bottom: 0.2em;
+  }
+
+  .actor-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  // .biography {
+
+  // }
+
+}
+
+.series-section {
+    width: 50%;
+    margin: 2em auto auto auto;
+
+    .series-list {
+      margin-left: 5.25em;
+      width: 60%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5em;
+      .series-poster  {
+        object-fit: cover;
+        height: 250px;
+        width: 170px;
+        border: 0.1em solid $darker;
+        border-radius: 0.5em;
+        flex: 1;
+      }
+    }
+}
