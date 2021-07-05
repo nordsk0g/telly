@@ -30,12 +30,16 @@ function Header(props) {
             >
               Login
             </li>
-            <li
-              onClick={props.formEventHandler}
+            <NavLink
+              to="/register"
               className={headerStyles["menu-item"]}
+              activeStyle={{ color: "#6d67ff" }}
             >
+              <li>
+
               Register
-            </li>
+              </li>
+            </NavLink>
             {/* <NavLink
               to="/activity"
               className={headerStyles["menu-item"]}

@@ -4,15 +4,20 @@ $font: #fefefe;
 .form {
   display: flex;
   flex-direction: column;
-
+  margin: auto;
+  width: 30%;
+  
   .form-item {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 0.5rem;
     .label {
       margin-bottom: 0.5rem;
     }
     .input {
+      width: 75%;
       padding: 0.5rem 0.25rem;
       background-color: #0e0f10;
       border: 1px solid transparent;

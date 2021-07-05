@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 // Component
-import Form from "../Form/Form";
+import Login from "../Form/Login";
+import Registration from "../Form/Registration";
 
 // Styles
 import modalStyles from "./Modal.module.scss";
@@ -10,19 +11,19 @@ import "./transition.css";
 
 function Modal({ visible, formType, visibleEventHandler }) {
   const [title, setTitle] = useState("");
-  const [form, setForm] = useState(false);
+  const [form, setForm] = useState();
 
   useEffect(
     function selectForm() {
       if (formType == "Login") {
         setTitle("Log In To Telly");
         setForm(
-          <Form formType={formType} visibleEventHandler={visibleEventHandler} />
+          <Login visibleEventHandler={visibleEventHandler} />
         );
       } else if (formType == "Register") {
         setTitle("Register");
         setForm(
-          <Form formType={formType} visibleEventHandler={visibleEventHandler} />
+          <Registration visibleEventHandler={visibleEventHandler} />
         );
       }
     },

@@ -1,13 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import zxcvbn from "zxcvbn";
 
 // Styles
 import formStyles from "./Form.module.scss";
 
-function Form({ formType, visibleEventHandler }) {
+
+function Registration({ formType, visibleEventHandler }) {
+    const [values, setValues] = useState({
+        username: '',
+        email: '',
+        password: '',
+        password2: ''
+    })
+
+    function handleChange(e) {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value
+    })
+    if (name === 'password') {
+      const evaluation = zxcvbn(value);
+      console.log(evaluation);
+    }
+  }
+
+  function handleSubmit(e) {
+      e.preventDefault();
+      setTimeout(() => visibleEventHandler(), 1500)
+  }
+
+//   console.log(values)
+  
   return (
     <form
       className={formStyles.form}
-      onSubmit={e => console.log(`submitting ${e.target.value}`)}
+      onSubmit={handleSubmit}
     >
       <div className={formStyles["form-item"]}>
         <label htmlFor="username" className={formStyles.label}>
@@ -17,10 +45,11 @@ function Form({ formType, visibleEventHandler }) {
           type="text"
           name="username"
           className={formStyles.input}
+          value={values.username}
+          onChange={handleChange}
           required
-        />
+          />
       </div>
-      {formType === "Register" && (
         <div className={formStyles["form-item"]}>
           <label htmlFor="email" className={formStyles.label}>
             Email
@@ -29,10 +58,11 @@ function Form({ formType, visibleEventHandler }) {
             type="email"
             name="email"
             className={formStyles.input}
+            value={values.email}
+            onChange={handleChange}
             required
-          />
+            />
         </div>
-      )}
       <div className={formStyles["form-item"]}>
         <label htmlFor="password" className={formStyles.label}>
           Password
@@ -41,25 +71,30 @@ function Form({ formType, visibleEventHandler }) {
           type="password"
           name="password"
           className={formStyles.input}
+          value={values.password}
+          onChange={handleChange}
           required
-        />
+          />
       </div>
-      {formType === "Register" && (
-        <div className={formStyles["form-item"]}>
+      <div className={formStyles["form-item"]}>
           <label htmlFor="password" className={formStyles.label}>
             Repeat Password
           </label>
           <input
             type="password"
-            name="password"
+            name="password2"
             className={formStyles.input}
+            value={values.password2}
+            onChange={handleChange}
             required
-          />
+            />
         </div>
-      )}
       <div className={formStyles["button-container"]}>
-        <button className={formStyles.btn} type="submit">
-          {formType}
+        <button
+            className={formStyles.btn}
+            type="submit"
+            >
+          Register
         </button>
         <button
           className={formStyles.btn}
@@ -73,4 +108,4 @@ function Form({ formType, visibleEventHandler }) {
   );
 }
 
-export default Form;
+export default Registration;

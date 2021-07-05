@@ -12,16 +12,18 @@ import Shows from "./Components/Shows/Shows";
 import Show from "./Components/Show/Show";
 import Actor from "./Components/Actor/Actor";
 import Activity from "./Components/Profile/Activity";
+import Registration from "./Components/Form/Registration";
 
 function App(props) {
   const [visible, setVisible] = useState(false);
   const [formType, setFormType] = useState(false);
 
-  function visibleEventHandler() {
+  function visibleEventHandler(e) {
     setVisible(!visible);
   }
 
   function formEventHandler(e) {
+    e.preventDefault();
     visibleEventHandler();
     setFormType(e.target.innerHTML);
   }
@@ -29,14 +31,15 @@ function App(props) {
   return (
     <Router>
       {/* <LastLocationProvider> */}
-      <Backdrop visible={visible} visibleEventHandler={visibleEventHandler} />
+      {/* <Backdrop visible={visible} visibleEventHandler={visibleEventHandler} />
       <Modal
         visible={visible}
         formType={formType}
         visibleEventHandler={visibleEventHandler}
-      />
+      /> */}
       <Header formEventHandler={formEventHandler} />
       {/* <Switch> */}
+        <Route path="/register" component={Registration}/>
         <Route path="/activity" component={Activity} />
         <Route exact path="/shows" component={Shows} />
         <Route exact path="/show/:show" component={Show} />
