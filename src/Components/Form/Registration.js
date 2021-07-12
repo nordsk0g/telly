@@ -48,57 +48,57 @@ function Registration({ formType, visibleEventHandler, submitForm }) {
         <label htmlFor="username" className={formStyles.label}>
           Username
         </label>
-        <input
-          type="text"
-          name="username"
-          className={formStyles.input}
-          value={values.username}
-          onChange={handleChange}
-          // required
+          <input
+            type="text"
+            name="username"
+            className={`${formStyles.input} ${errors.email ? formStyles["input-error"] : ""}`}
+            value={values.username}
+            onChange={handleChange}
+            // required
           />
-          {errors.username && <p className={formStyles.error}>{errors.username}</p>}
+          <p className={formStyles.error}>{errors.username ?? ''}</p>
       </div>
         <div className={formStyles["form-item"]}>
           <label htmlFor="email" className={formStyles.label}>
             Email
           </label>
-          <input
-            type="email"
-            name="email"
-            className={formStyles.input}
-            value={values.email}
-            onChange={handleChange}
-            // required
-            />
-            {errors.email && <p className={formStyles.error}>{errors.email}</p>}
+            <input
+              type="email"
+              name="email"
+              className={`${formStyles.input} ${errors.username ? formStyles["input-error"] : ""}`}
+              value={values.email}
+              onChange={handleChange}
+              // required
+              />
+            <p className={formStyles.error}>{errors.email ?? ''}</p>
         </div>
       <div className={formStyles["form-item"]}>
         <label htmlFor="password" className={formStyles.label}>
           Password
         </label>
-        <input
-          type="password"
-          name="password"
-          className={formStyles.input}
-          value={values.password}
-          onChange={handleChange}
-          // required
-          />
-          {errors.password && <p className={formStyles.error}>{errors.password}</p>}
+          <input
+            type="password"
+            name="password"
+            className={`${formStyles.input} ${errors.password ? formStyles["input-error"] : ""}`}
+            value={values.password}
+            onChange={handleChange}
+            // required
+            />
+            <p className={formStyles.error}>{errors.password ?? ''}</p>
       </div>
       <div className={formStyles["form-item"]}>
           <label htmlFor="password" className={formStyles.label}>
             Repeat Password
           </label>
-          <input
-            type="password"
-            name="password2"
-            className={formStyles.input}
-            value={values.password2}
-            onChange={handleChange}
-            // required
-            />
-            {errors.password2 && <p className={formStyles.error}>{errors.password2}</p>}
+            <input
+              type="password"
+              name="password2"
+              className={`${formStyles.input} ${errors.password2 ? formStyles["input-error"] : ""}`}
+              value={values.password2}
+              onChange={handleChange}
+              // required
+              />
+              <p className={formStyles.error}>{errors.password2 ?? ''}</p>
         </div>
       <div className={formStyles["button-container"]}>
         <button
