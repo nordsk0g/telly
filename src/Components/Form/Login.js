@@ -7,10 +7,8 @@ import formStyles from "./Form.module.scss";
 
 function Login({ formType, visibleEventHandler }) {
   const [values, setValues] = useState({
-    username: '',
     email: '',
-    password: '',
-    password2: ''
+    password: ''
   })
   
   function handleChange(e) {
@@ -29,9 +27,10 @@ function Login({ formType, visibleEventHandler }) {
           <input
             type="email"
             name="email"
+            value={values.email}
             className={formStyles.input}
             required
-          />
+            />
         </div>
       <div className={formStyles["form-item"]}>
         <label htmlFor="password" className={formStyles.label}>
@@ -40,6 +39,7 @@ function Login({ formType, visibleEventHandler }) {
         <input
           type="password"
           name="password"
+          value={values.password}
           className={formStyles.input}
           onChange={formType === "Register" && handleChange}
           required

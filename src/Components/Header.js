@@ -24,12 +24,16 @@ function Header(props) {
             <li>Telly</li>
           </NavLink>
           <div className={headerStyles["item-container"]}>
-            <li
-              onClick={props.formEventHandler}
+            <NavLink
+              to="/login"
               className={headerStyles["menu-item"]}
+              activeStyle={{ color: "#6d67ff" }}
             >
+              <li>
+
               Login
-            </li>
+              </li>
+            </NavLink>
             <NavLink
               to="/register"
               className={headerStyles["menu-item"]}

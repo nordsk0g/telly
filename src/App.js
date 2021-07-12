@@ -12,7 +12,8 @@ import Shows from "./Components/Shows/Shows";
 import Show from "./Components/Show/Show";
 import Actor from "./Components/Actor/Actor";
 import Activity from "./Components/Profile/Activity";
-import Registration from "./Components/Form/Registration";
+import Login from "./Components/Form/Login";
+import RegistrationForm from "./Components/Form/Form";
 
 function App(props) {
   const [visible, setVisible] = useState(false);
@@ -39,7 +40,8 @@ function App(props) {
       /> */}
       <Header formEventHandler={formEventHandler} />
       {/* <Switch> */}
-        <Route path="/register" component={Registration}/>
+        <Route path="/login" component={Login}/>
+        <Route path="/register" component={RegistrationForm}/>
         <Route path="/activity" component={Activity} />
         <Route exact path="/shows" component={Shows} />
         <Route exact path="/show/:show" component={Show} />

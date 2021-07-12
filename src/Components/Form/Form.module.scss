@@ -1,5 +1,13 @@
-$background: #6d67ff;
-$font: #fefefe;
+$header-background: #0e0f10;
+$lighter-header: #22262a;
+$lightest: hsl(0, 0%, 100%);
+$lighter: hsl(0, 0%, 70%);
+$light: hsl(0, 0%, 60%);
+$darker: hsl(0, 0%, 50%);
+$darkest: hsl(0, 0%, 20%);
+$active-color: #6d67ff;
+$second-active-color: #67ff6d;
+$third-active-color: #ff6d67;
 
 .form {
   display: flex;
@@ -9,22 +17,23 @@ $font: #fefefe;
   
   .form-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
     .label {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.5em;
+      margin-right: 1em;
     }
     .input {
-      width: 75%;
+      width: 60%;
       padding: 0.5rem 0.25rem;
       background-color: #0e0f10;
       border: 1px solid transparent;
       border-radius: 5px;
-      color: $font;
+      color: $lightest;
       &:focus {
-        border: 1px solid $background;
+        border: 1px solid $active-color;
       }
     }
   }
@@ -40,8 +49,8 @@ $font: #fefefe;
       padding: 0.75rem 1.5rem;
       border: none;
       border-radius: 2px;
-      background-color: $background;
-      color: $font;
+      background-color: $active-color;
+      color: $lightest;
       cursor: pointer;
       text-transform: uppercase;
       font-family: "Montserrat", sans-serif;
@@ -59,4 +68,9 @@ $font: #fefefe;
       }
     }
   }
+}
+
+.error {
+  margin-top: 0.2em;
+  color: $third-active-color;
 }

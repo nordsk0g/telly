@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import zxcvbn from "zxcvbn";
+import validate from "../Utility Components/validateInfo";
 
 // Styles
 import formStyles from "./Form.module.scss";
 
 
-function Registration({ formType, visibleEventHandler }) {
+function Registration({ formType, visibleEventHandler, submitForm }) {
     const [values, setValues] = useState({
         username: '',
         email: '',
         password: '',
         password2: ''
     })
+    const [errors, setErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     function handleChange(e) {
     const { name, value } = e.target;
@@ -21,16 +24,20 @@ function Registration({ formType, visibleEventHandler }) {
     })
     if (name === 'password') {
       const evaluation = zxcvbn(value);
-      console.log(evaluation);
     }
   }
 
   function handleSubmit(e) {
       e.preventDefault();
-      setTimeout(() => visibleEventHandler(), 1500)
+      setErrors(validate(values));
+      setIsSubmitting(true);
   }
 
-//   console.log(values)
+  useEffect(() => {
+    if(Object.keys(errors).length === 0 && isSubmitting) {
+      submitForm();
+    }
+  }, [errors])
   
   return (
     <form
@@ -47,8 +54,9 @@ function Registration({ formType, visibleEventHandler }) {
           className={formStyles.input}
           value={values.username}
           onChange={handleChange}
-          required
+          // required
           />
+          {errors.username && <p className={formStyles.error}>{errors.username}</p>}
       </div>
         <div className={formStyles["form-item"]}>
           <label htmlFor="email" className={formStyles.label}>
@@ -60,8 +68,9 @@ function Registration({ formType, visibleEventHandler }) {
             className={formStyles.input}
             value={values.email}
             onChange={handleChange}
-            required
+            // required
             />
+            {errors.email && <p className={formStyles.error}>{errors.email}</p>}
         </div>
       <div className={formStyles["form-item"]}>
         <label htmlFor="password" className={formStyles.label}>
@@ -73,8 +82,9 @@ function Registration({ formType, visibleEventHandler }) {
           className={formStyles.input}
           value={values.password}
           onChange={handleChange}
-          required
+          // required
           />
+          {errors.password && <p className={formStyles.error}>{errors.password}</p>}
       </div>
       <div className={formStyles["form-item"]}>
           <label htmlFor="password" className={formStyles.label}>
@@ -86,8 +96,9 @@ function Registration({ formType, visibleEventHandler }) {
             className={formStyles.input}
             value={values.password2}
             onChange={handleChange}
-            required
+            // required
             />
+            {errors.password2 && <p className={formStyles.error}>{errors.password2}</p>}
         </div>
       <div className={formStyles["button-container"]}>
         <button
