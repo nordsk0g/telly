@@ -25,7 +25,7 @@ function Header(props) {
           </NavLink>
           <div className={headerStyles["item-container"]}>
             <NavLink
-              to="/login"
+              to="/auth/login"
               className={headerStyles["menu-item"]}
               activeStyle={{ color: "#6d67ff" }}
             >
@@ -35,7 +35,7 @@ function Header(props) {
               </li>
             </NavLink>
             <NavLink
-              to="/register"
+              to="/auth/register"
               className={headerStyles["menu-item"]}
               activeStyle={{ color: "#6d67ff" }}
             >

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import zxcvbn from "zxcvbn";
 import validate from "../Utility Components/validateInfo";
 
+// Services
+import authService from "../../services/auth";
+
 // Styles
 import formStyles from "./Form.module.scss";
 
@@ -31,6 +34,8 @@ function Registration({ formType, visibleEventHandler, submitForm }) {
       e.preventDefault();
       setErrors(validate(values));
       setIsSubmitting(true);
+      authService.registerUser(values)
+        .catch(error => console.error(error))
   }
 
   useEffect(() => {

@@ -11,8 +11,8 @@ export default function Form() {
 
     return (
         <div>
-            {/* {!isSubmitted ? (<Registration submitForm={submitForm}/>) : <RegistrationSuccess />} */}
-            <RegistrationSuccess />
+            {!isSubmitted ? (<Registration submitForm={submitForm}/>) : <RegistrationSuccess />}
+            {/* <RegistrationSuccess /> */}
         </div>
     )
 };

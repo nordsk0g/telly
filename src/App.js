@@ -40,8 +40,8 @@ function App(props) {
       /> */}
       <Header formEventHandler={formEventHandler} />
       {/* <Switch> */}
-        <Route path="/login" component={Login}/>
-        <Route path="/register" component={RegistrationForm}/>
+        <Route path="/auth/login" component={Login}/>
+        <Route path="/auth/register" component={RegistrationForm}/>
         <Route path="/activity" component={Activity} />
         <Route exact path="/shows" component={Shows} />
         <Route exact path="/show/:show" component={Show} />

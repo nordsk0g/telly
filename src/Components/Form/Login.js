@@ -1,24 +1,41 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
+import { useHistory } from 'react-router-dom';
 import zxcvbn from "zxcvbn";
+
+// Services
+import authService from "../../services/auth";
 
 // Styles
 import formStyles from "./Form.module.scss";
 
 
 function Login({ formType, visibleEventHandler }) {
+  const history = useHistory();
   const [values, setValues] = useState({
     email: '',
     password: ''
   })
+
   
   function handleChange(e) {
-  
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value
+    })
   }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    authService.login(values).catch(error => console.error(error));
+    history.push('/');
+    
+}
   
   return (
     <form
       className={formStyles.form}
-      onSubmit={e => console.log(`submitting ${e.target.value}`)}
+      onSubmit={handleSubmit}
     >
         <div className={formStyles["form-item"]}>
           <label htmlFor="email" className={formStyles.label}>
@@ -29,6 +46,7 @@ function Login({ formType, visibleEventHandler }) {
             name="email"
             value={values.email}
             className={formStyles.input}
+            onChange={handleChange}
             required
             />
         </div>
@@ -41,7 +59,7 @@ function Login({ formType, visibleEventHandler }) {
           name="password"
           value={values.password}
           className={formStyles.input}
-          onChange={formType === "Register" && handleChange}
+          onChange={handleChange}
           required
         />
       </div>
